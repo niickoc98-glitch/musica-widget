@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Widget de Música Minimalista</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+  body {
+    font-family: 'Lato', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: transparent;
+    margin: 0;
+  }
+  .widget {
+    background: rgba(255,255,255,0.6);
+    padding: 20px 30px;
+    border-radius: 20px;
+    width: 300px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    color:#000;
+  }
+  .widget p {
+    margin:0;
+    font-size:1rem;
+    font-weight:300;
+  }
+  audio {
+    width:100%;
+    margin:10px 0;
+  }
+  .controls {
+    display:flex;
+    justify-content:space-around;
+    width:100%;
+  }
+  .controls button {
+    background:#000;
+    color:#fff;
+    border:none;
+    padding:8px 15px;
+    border-radius:10px;
+    cursor:pointer;
+  }
+</style>
+</head>
+<body>
+<div class="widget">
+  <p>🎵 Música de Fondo</p>
+  <audio id="bgMusic" loop autoplay>
+    <source src="mimusica.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio.
+  </audio>
+  <div class="controls">
+    <button onclick="document.getElementById('bgMusic').play()">▶️ Play</button>
+    <button onclick="document.getElementById('bgMusic').pause()">⏸️ Pause</button>
+    <button onclick="document.getElementById('bgMusic').currentTime=0">🔄 Reset</button>
+  </div>
+</div>
+</body>
+</html>
